@@ -14,12 +14,12 @@ describe("guess the results within six", function() {
         guess_success();
         expect(document.getElementById("label").innerHTML).toBe("恭喜成功猜对");
     });
-    it("should be 恭喜成功猜对 when the six time is 1234 ",function(){
+    it("should be 恭喜成功猜对 when the three time is 1234 ",function(){
         guess_fail(2)
         guess_success();
         expect(document.getElementById("label").innerHTML).toBe("恭喜成功猜对");
     });
-    it ("should be 恭喜成功猜对 when the first time is 1234",function(){
+    it ("should be 恭喜成功猜对 when the last time is 1234",function(){
         guess_fail(5);;
         guess_success();
         expect(document.getElementById("label").innerHTML).toBe("恭喜成功猜对");
