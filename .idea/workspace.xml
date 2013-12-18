@@ -7,7 +7,7 @@
     <file path="/PlayerSpec.js" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387262154530" ignored="false" />
     <file path="/Dummy.txt" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387334499815" ignored="false" />
     <file path="/Song.js" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387265578034" ignored="false" />
-    <file path="/Count.js" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387333690953" ignored="false" />
+    <file path="/Count.js" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387357655730" ignored="false" />
     <file path="/CountSpec.js" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387352117742" ignored="false" />
     <file path="/AnalysisSpec.js" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387334879500" ignored="false" />
     <file path="/Analysis.js" changelist="c33afd83-d053-4982-a685-f646b3697269" time="1387335786656" ignored="false" />
@@ -38,7 +38,7 @@
       <file leaf-file-name="SpecRunner.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpecRunner.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="62" selection-start="1210" selection-end="1210" vertical-scroll-proportion="-15.0">
+            <state line="26" column="75" selection-start="1273" selection-end="1273" vertical-scroll-proportion="-2.0357144">
               <folding />
             </state>
           </provider>
@@ -80,10 +80,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageTestHelp.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PageTestHelp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helper/PageTestHelp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="52" selection-start="239" selection-end="239" vertical-scroll-proportion="0.17857143">
+            <state line="7" column="52" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Count.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Count.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="56" selection-start="531" selection-end="531" vertical-scroll-proportion="0.4506803">
               <folding />
             </state>
           </provider>
@@ -104,7 +113,6 @@
         <option value="$PROJECT_DIR$/spec/PlayerSpec.js" />
         <option value="$PROJECT_DIR$/src/Song.js" />
         <option value="$PROJECT_DIR$/spec/AnalySpec.js" />
-        <option value="$PROJECT_DIR$/src/Count.js" />
         <option value="$PROJECT_DIR$/spec/AnalysisSpec.js" />
         <option value="$PROJECT_DIR$/src/Analysis.js" />
         <option value="$PROJECT_DIR$/spec/JointTest.js" />
@@ -113,6 +121,7 @@
         <option value="$PROJECT_DIR$/helper/CountHelper.js" />
         <option value="$PROJECT_DIR$/spec/CountSpec.js" />
         <option value="$PROJECT_DIR$/spec/SortSpec.js" />
+        <option value="$PROJECT_DIR$/src/Count.js" />
       </list>
     </option>
   </component>
@@ -296,7 +305,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25346687" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25731894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -411,16 +420,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/underscore/underscore-min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1184" column="7" selection-start="18242" selection-end="18242" vertical-scroll-proportion="0.33215547">
-          <folding />
-        </state>
+        <state line="1184" column="7" selection-start="18242" selection-end="18242" vertical-scroll-proportion="0.33215547" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/JointTest.js">
@@ -430,23 +435,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Count.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="20" selection-start="705" selection-end="705" vertical-scroll-proportion="0.6377551">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/AnalysisSpec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="0" selection-start="1361" selection-end="1361" vertical-scroll-proportion="1.2176871">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpecRunner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="62" selection-start="1210" selection-end="1210" vertical-scroll-proportion="-15.0">
           <folding />
         </state>
       </provider>
@@ -472,6 +463,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helper/PageTestHelp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="52" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpecRunner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="75" selection-start="1273" selection-end="1273" vertical-scroll-proportion="-2.0357144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Analysis.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="56" selection-start="556" selection-end="605" vertical-scroll-proportion="0.0">
@@ -479,9 +484,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helper/PageTestHelp.js">
+    <entry file="file://$PROJECT_DIR$/src/Count.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="52" selection-start="239" selection-end="239" vertical-scroll-proportion="0.17857143">
+        <state line="15" column="56" selection-start="531" selection-end="531" vertical-scroll-proportion="0.4506803">
           <folding />
         </state>
       </provider>

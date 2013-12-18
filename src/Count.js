@@ -12,6 +12,7 @@ create_count=function(){
     document.getElementById("button").disabled=false;
     document.getElementById("input").value="" ;
     document.getElementById("label").innerHTML="";
+    localStorage.number_for_times="0"
     return count
 }
 is_or_no_repeat=function(count){
