@@ -45,7 +45,7 @@ sort = function () {
 sort_start = function (count) {
     var tt_count = get_input_value() ;
     if (tt_count.length != 4 || is_or_no_repeat(tt_count) == "yes") {
-        label_export("格式不对")
+        label_export("格式不对");
         return;
     }
     return sort_analysis(tt_count, count);
@@ -55,15 +55,25 @@ sort_analysis = function (tt_count, count) {
     var sorting = analysis(tt_count, count)
     var number = localStorage.getItem("number_for_times");
     if (sorting == "4A0B" && number <= 6) {
+        console.log("1")
         label_export("恭喜成功猜对");
         button_disabled(true);
+        return;
     }
-    else if (sorting != "4A0B" && number == 6) {
+    return guess_failure(sorting,number,count);
+}
 
+guess_failure=function(sorting,number,count){
+    if (sorting != "4A0B" && number == 6) {
         label_export("失败，答案是" + count)
         button_disabled(true);
+        return;
     }
-    else if (sorting != "4A0B" && number <= 6) {
-       label_export(sorting);
+    return guess_continue(sorting,number);
+}
+
+guess_continue=function(sorting,number){
+    if (sorting != "4A0B" && number <= 6) {
+        label_export(sorting);
     }
 }
