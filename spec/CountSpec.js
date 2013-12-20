@@ -3,18 +3,18 @@ describe("create  a four-digit random number", function() {
 
 
   beforeEach(function() {
-
+      count = create_count();
   });
   afterEach(function(){
       clear();
     });
 
     it("should a four-digit ", function() {
-        count = create_count();
+
     expect(count.length).toBe(4);
   });
     it("should a number ", function() {
-        count = create_count();
+//        count = create_count();
         expect(isNaN(count)).toBe(false);
     });
   it("should not have repeat number ",function(){

@@ -9,6 +9,7 @@ describe("Guess the number compared with the random number", function() {
 
     it("should be 4A0B when tt_count=count", function() {
         var tt_count=count;
+
         var sort=analysis(tt_count,count)
         expect(sort).toBe("4A0B");
     });

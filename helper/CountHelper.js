@@ -1,17 +1,25 @@
 create_tt_count = function (count) {
     var tt_count = "", i;
-    var b = (Math.floor(Math.random() * 9 + 0)).toString();
-    while (_.some(count, function (list) {
-        return list == b
-    })) {
-        b = (Math.floor(Math.random() * 9 + 0)).toString();
-    }
+    var b =create_different_random_number(count);
     for (i = 0; i < 3; i++) {
         tt_count = tt_count + count[i]
     }
     tt_count = tt_count + b;
     return tt_count
 }
+
+create_different_random_number=function(count){
+    var b = (Math.floor(Math.random() * 9 + 0)).toString();
+    while (number_is_or_not_expect(b,count)==true) {
+        b = (Math.floor(Math.random() * 9 + 0)).toString();
+    }
+    return b;
+}
+
+number_is_or_not_expect=function(b,count){
+       return _.some(count, function (list) {return list == b})
+    }
+
 
 random_test = function (number) {
     var i, j;
