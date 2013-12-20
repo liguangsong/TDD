@@ -3,7 +3,7 @@ create_count = function () {
     var i;
     for (i = 0; i < 4; i++) {
         var b = creat_a_one_digit_random();
-        while (is_or_no_have_some_number(count, b)==true) {
+        while (is_or_no_have_some_number(count, b) == true) {
             b = creat_a_one_digit_random();
         }
         count = count + b;
