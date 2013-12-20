@@ -20,20 +20,32 @@ number_for_times_add = function () {
     localStorage.setItem("number_for_times", JSON.stringify(number))
 }
 
+label_export=function(message){
+    document.getElementById("label").innerHTML = message;
+}
+
+button_disabled=function(abeled){
+    document.getElementById("button").disabled =abeled ;
+}
+
+get_input_value=function(){
+    return   document.getElementById("input").value
+}
+
 sort = function () {
     var count = localStorage.getItem("count")
     if (count == "") {
-        document.getElementById("button").disabled = true;
-        document.getElementById("label").innerHTML = "未开始";
+        button_disabled(true)
+        label_export("未开始");
         return;
     }
     return sort_start(count);
 }
 
 sort_start = function (count) {
-    var tt_count = document.getElementById("input").value;
+    var tt_count = get_input_value() ;
     if (tt_count.length != 4 || is_or_no_repeat(tt_count) == "yes") {
-        document.getElementById("label").innerHTML = "格式不对";
+        label_export("格式不对")
         return;
     }
     return sort_analysis(tt_count, count);
@@ -43,14 +55,15 @@ sort_analysis = function (tt_count, count) {
     var sorting = analysis(tt_count, count)
     var number = localStorage.getItem("number_for_times");
     if (sorting == "4A0B" && number <= 6) {
-        document.getElementById("label").innerHTML = "恭喜成功猜对";
-        document.getElementById("button").disabled = true;
+        label_export("恭喜成功猜对");
+        button_disabled(true);
     }
     else if (sorting != "4A0B" && number == 6) {
-        document.getElementById("label").innerHTML = "失败，答案是" + count;
-        document.getElementById("button").disabled = true;
+
+        label_export("失败，答案是" + count)
+        button_disabled(true);
     }
     else if (sorting != "4A0B" && number <= 6) {
-        document.getElementById("label").innerHTML = sorting;
+       label_export(sorting);
     }
 }

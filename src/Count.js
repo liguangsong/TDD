@@ -27,12 +27,6 @@ number_empty = function () {
     localStorage.number_for_times = "0"
 }
 
-page_initialization = function () {
-    document.getElementById("button").disabled = false;
-    document.getElementById("input").value = "";
-    document.getElementById("label").innerHTML = "";
-}
-
 is_or_no_repeat = function (count) {
     var i, j;
     for (i = 0; i < 3; i++) {
@@ -43,5 +37,10 @@ is_or_no_repeat = function (count) {
         }
     }
     return "no";
+}
 
+page_initialization = function () {
+    document.getElementById("button").disabled = false;
+    document.getElementById("input").value = "";
+    document.getElementById("label").innerHTML = "";
 }
