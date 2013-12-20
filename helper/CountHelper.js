@@ -1,57 +1,57 @@
-create_tt_count = function (count) {
-    var tt_count = "", i;
-    var b = create_different_random_number(count);
+function create_guess_number(random_number) {
+    var guess_number = "", i;
+    var one_digit_random = create_different_random_number(random_number);
     for (i = 0; i < 3; i++) {
-        tt_count = tt_count + count[i]
+        guess_number = guess_number + random_number[i]
     }
-    tt_count = tt_count + b;
-    return tt_count
+    guess_number = guess_number + one_digit_random;
+    return guess_number
 }
 
-create_different_random_number = function (count) {
-    var b = (Math.floor(Math.random() * 9 + 0)).toString();
-    while (number_is_or_not_expect(b, count) == true) {
-        b = (Math.floor(Math.random() * 9 + 0)).toString();
+function create_different_random_number(random_number) {
+    var one_digit_random = (Math.floor(Math.random() * 9 + 0)).toString();
+    while (number_is_or_not_expect(one_digit_random, random_number) == true) {
+        one_digit_random = (Math.floor(Math.random() * 9 + 0)).toString();
     }
-    return b;
+    return one_digit_random;
 }
 
-number_is_or_not_expect = function (b, count) {
-    return _.some(count, function (list) {
-        return list == b
+function number_is_or_not_expect(one_digit_random, random_number) {
+    return _.some(random_number, function (list) {
+        return list == one_digit_random
     })
 }
 
-random_test = function (number) {
+function random_test(number) {
     var i, j;
     var event = [];
     for (i = 0; i < number; i++) {
-        var count = create_count();
-        event.push({count: count})
+        var random_number = create_random_number();
+        event.push({random_number: random_number})
     }
     return grouping(event)
 }
 
-grouping = function (event) {
-    var a = _.groupBy(event, function (list) {
-        return list.count
+function grouping(event) {
+    var random_number_list = _.groupBy(event, function (list) {
+        return list.random_number
     })
     var event_list = []
-    _.map(a, function (value, key) {
-        event_list.push({"count": key, "number": value.length})
+    _.map(random_number_list, function (value, key) {
+        event_list.push({"random_number": key, "number": value.length})
     })
     return get_most_number(event_list)
 }
 
-get_most_number = function (event_list) {
+function get_most_number(event_list) {
     var a = _.max(event_list, function (list) {
         return list.number;
     })["number"];
-    return (a < 20)
+    return (a < 50)
 }
 
-clear = function () {
-    localStorage.count = ""
+function clear() {
+    localStorage.random_number = ""
     localStorage.number_for_times = "0";
     document.getElementById("input").value = "";
     document.getElementById("label").innerHTML = "";

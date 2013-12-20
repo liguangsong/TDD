@@ -1,7 +1,7 @@
 describe("guess the results within six", function () {
 
     beforeEach(function () {
-        localStorage.count = "1234"
+        localStorage.random_number = "1234"
         localStorage.number_for_times = "0";
         document.getElementById("button").disabled = false;
     });
@@ -28,9 +28,9 @@ describe("guess the results within six", function () {
     })
 
     it("should be 失败，答案是1234 when the last time is  not 1234 ", function () {
-        var count = localStorage.getItem("count")
+        var random_number = localStorage.getItem("random_number")
         guess_fail(6);
-        expect(document.getElementById("label").innerHTML).toBe("失败，答案是" + count);
+        expect(document.getElementById("label").innerHTML).toBe("失败，答案是" + random_number);
     });
 
 });

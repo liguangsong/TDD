@@ -1,5 +1,5 @@
 describe("create  a four-digit random number", function () {
-    var count;
+    var random_number;
 
     beforeEach(function () {
 
@@ -10,17 +10,17 @@ describe("create  a four-digit random number", function () {
     });
 
     it("should a four-digit ", function () {
-        count = create_count();
-        expect(count.length).toBe(4);
+        random_number = create_random_number();
+        expect(random_number.length).toBe(4);
     });
 
     it("should a number ", function () {
-        count = create_count();
-        expect(isNaN(count)).toBe(false);
+        random_number = create_random_number();
+        expect(isNaN(random_number)).toBe(false);
     });
 
     it("should not have repeat number ", function () {
-        var status = is_or_no_repeat(count);
+        var status = is_or_no_repeat(random_number);
         expect(status).toBe("no")
     });
 

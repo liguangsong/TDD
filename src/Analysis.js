@@ -1,78 +1,78 @@
-analysis = function (tt_count, count) {
-    var i, j, A = 0, B = 0;
+function analysis(guess_number, random_number) {
+    var i, j, number_of_A = 0, number_of_B = 0;
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
-            if (tt_count[i] == count[j] && i == j) {
-                A = A + 1
+            if (guess_number[i] == random_number[j] && i == j) {
+                number_of_A = number_of_A + 1
             }
-            if (tt_count[i] == count[j] && i != j) {
-                B = B + 1;
+            if (guess_number[i] == random_number[j] && i != j) {
+                number_of_B = number_of_B + 1;
             }
         }
     }
     number_for_times_add();
-    return A + "A" + B + "B";
+    return number_of_A + "A" + number_of_B + "B";
 }
 
-number_for_times_add = function () {
+function number_for_times_add() {
     var number = JSON.parse(localStorage.getItem("number_for_times"));
     number = number + 1;
     localStorage.setItem("number_for_times", JSON.stringify(number))
 }
 
-label_export = function (message) {
+function label_export(message) {
     document.getElementById("label").innerHTML = message;
 }
 
-button_disabled = function (abeled) {
+function button_disabled(abeled) {
     document.getElementById("button").disabled = abeled;
 }
 
-get_input_value = function () {
+function get_input_value() {
     return   document.getElementById("input").value
 }
 
-sort = function () {
-    var count = localStorage.getItem("count")
-    if (count == "") {
+function sort() {
+    var random_number = localStorage.getItem("random_number")
+    if (random_number == "") {
         button_disabled(true)
         label_export("未开始");
         return;
     }
-    return sort_start(count);
+    return sort_start(random_number);
 }
 
-sort_start = function (count) {
-    var tt_count = get_input_value();
-    if (tt_count.length != 4 || is_or_no_repeat(tt_count) == "yes") {
+function sort_start(random_number) {
+    var guess_number = get_input_value();
+    if (guess_number.length != 4 || is_or_no_repeat(guess_number) == "yes") {
         label_export("格式不对");
         return;
     }
-    return sort_analysis(tt_count, count);
+    return sort_analysis(guess_number, random_number);
 }
 
-sort_analysis = function (tt_count, count) {
-    var sorting = analysis(tt_count, count)
-    var number = localStorage.getItem("number_for_times");
-    if (sorting == "4A0B" && number <= 6) {
+function sort_analysis(guess_number, random_number) {
+    var sorting = analysis(guess_number, random_number)
+    var number_for_times = localStorage.getItem("number_for_times");
+    if (sorting == "4A0B" && number_for_times <= 6) {
         label_export("恭喜成功猜对");
         button_disabled(true);
         return;
     }
-    return guess_failure(sorting, number, count);
+    return guess_failure(sorting, number_for_times, random_number);
 }
 
-guess_failure = function (sorting, number, count) {
-    if (sorting != "4A0B" && number == 6) {
-        label_export("失败，答案是" + count)
+function guess_failure(sorting, number_for_times, random_number) {
+    if (sorting != "4A0B" && number_for_times == 6) {
+        label_export("失败，答案是" + random_number)
         button_disabled(true);
         return;
     }
-    return guess_continue(sorting, number);
+    return guess_continue(sorting, number_for_times);
 }
 
-guess_continue = function (sorting, number) {
-    if (sorting != "4A0B" && number <= 6) {
+function guess_continue(sorting, number_for_times) {
+    if (sorting != "4A0B" && number_for_times <= 6) {
         label_export(sorting);
     }
 }
