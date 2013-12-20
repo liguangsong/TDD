@@ -1,4 +1,4 @@
-function analysis(guess_number, random_number) {
+function number_analysis(guess_number, random_number) {
     var i, j, number_of_A = 0, number_of_B = 0;
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
@@ -32,27 +32,27 @@ function get_input_value() {
     return   document.getElementById("input").value
 }
 
-function sort() {
+function game_is_or_not_start() {
     var random_number = localStorage.getItem("random_number")
     if (random_number == "") {
         button_disabled(true)
         label_export("未开始");
         return;
     }
-    return sort_start(random_number);
+    return is_or_not_a_guess_number(random_number);
 }
 
-function sort_start(random_number) {
+function is_or_not_a_guess_number(random_number) {
     var guess_number = get_input_value();
     if (guess_number.length != 4 || is_or_no_repeat(guess_number) == "yes") {
         label_export("格式不对");
         return;
     }
-    return sort_analysis(guess_number, random_number);
+    return guess_analysis(guess_number, random_number);
 }
 
-function sort_analysis(guess_number, random_number) {
-    var sorting = analysis(guess_number, random_number)
+function guess_analysis(guess_number, random_number) {
+    var sorting = number_analysis(guess_number, random_number)
     var number_for_times = localStorage.getItem("number_for_times");
     if (sorting == "4A0B" && number_for_times <= 6) {
         label_export("恭喜成功猜对");
