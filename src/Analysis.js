@@ -1,3 +1,15 @@
+function label_export(message) {
+    document.getElementById("label").innerHTML = message;
+}
+
+function button_disabled(abeled) {
+    document.getElementById("button").disabled = abeled;
+}
+
+function get_input_value() {
+    return   document.getElementById("input").value
+}
+
 function number_analysis(guess_number, random_number) {
     var i, j, number_of_A = 0, number_of_B = 0;
     for (i = 0; i < 4; i++) {
@@ -18,18 +30,6 @@ function number_for_times_add() {
     var number = JSON.parse(localStorage.getItem("number_for_times"));
     number = number + 1;
     localStorage.setItem("number_for_times", JSON.stringify(number))
-}
-
-function label_export(message) {
-    document.getElementById("label").innerHTML = message;
-}
-
-function button_disabled(abeled) {
-    document.getElementById("button").disabled = abeled;
-}
-
-function get_input_value() {
-    return   document.getElementById("input").value
 }
 
 function game_is_or_not_start() {

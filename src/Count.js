@@ -1,3 +1,8 @@
+function creat_a_one_digit_random() {
+    var one_digit_random = (Math.floor(Math.random() * 9 + 0)).toString();
+    return one_digit_random;
+}
+
 function create_random_number() {
     var random_number = "";
     var i;
@@ -16,11 +21,6 @@ function is_or_no_have_some_number(random_number, one_digit_random) {
     return _.some(random_number, function (list) {
         return list == one_digit_random
     })
-}
-
-function creat_a_one_digit_random() {
-    var one_digit_random = (Math.floor(Math.random() * 9 + 0)).toString();
-    return one_digit_random;
 }
 
 function number_empty() {
