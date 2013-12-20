@@ -4,6 +4,7 @@ describe(" compare guess number", function () {
     beforeEach(function () {
         count = "1234";
     });
+
     afterEach(function () {
         clear();
     });
@@ -27,7 +28,6 @@ describe(" compare guess number", function () {
     });
 
     it("should be 0A4B when tt_count=4321", function () {
-
         var tt_count = "4321"
         var sort = analysis(tt_count, count)
         expect(sort).toBe("0A4B")

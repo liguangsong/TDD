@@ -10,7 +10,6 @@ describe("guess the results within six", function () {
         clear();
     });
 
-
     it("should be 恭喜成功猜对 when the first time is 1234", function () {
         guess_success();
         expect(document.getElementById("label").innerHTML).toBe("恭喜成功猜对");

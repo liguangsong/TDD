@@ -55,7 +55,6 @@ sort_analysis = function (tt_count, count) {
     var sorting = analysis(tt_count, count)
     var number = localStorage.getItem("number_for_times");
     if (sorting == "4A0B" && number <= 6) {
-        console.log("1")
         label_export("恭喜成功猜对");
         button_disabled(true);
         return;

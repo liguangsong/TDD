@@ -44,3 +44,8 @@ page_initialization = function () {
     document.getElementById("input").value = "";
     document.getElementById("label").innerHTML = "";
 }
+
+start_game=function(){
+    create_count();
+    page_initialization();
+}

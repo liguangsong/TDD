@@ -20,7 +20,6 @@ describe("Guess the number compared with the random number", function () {
         var tt_count = create_tt_count(count);
         var sort = analysis(tt_count, count)
         expect(sort).toBe("3A0B")
-
     });
 
 });
