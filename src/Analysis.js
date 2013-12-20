@@ -15,6 +15,7 @@ analysis=function(tt_count,count){
     localStorage.setItem("number_for_times",JSON.stringify(number))
     return A+"A"+B+"B";
 }
+
 sort=function(){
     var count=localStorage.getItem("count")
     if(count==""){
@@ -24,6 +25,7 @@ sort=function(){
     }
     return sort_start(count);
 }
+
 sort_start=function(count){
     var tt_count=document.getElementById("input").value;
     if(tt_count.length!=4||is_or_no_repeat(tt_count)=="yes"){
@@ -32,6 +34,7 @@ sort_start=function(count){
     }
     return sort_analysis(tt_count,count);
 }
+
 sort_analysis=function(tt_count,count){
     var sorting= analysis(tt_count,count)
     var number=localStorage.getItem("number_for_times");

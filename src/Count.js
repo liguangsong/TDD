@@ -1,20 +1,36 @@
 create_count=function(){
     var count="";
-    var i,j=4;
-    for(i=0;i<j;i++){
-    var b=(Math.floor(Math.random()*9+0)).toString();
-    while(_.some(count,function(list){return list==b})) {
-         b=(Math.floor(Math.random()*9+0)).toString();
+    var i;
+    for(i=0;i<4;i++){
+    var b=creat_a_one_digit_random();
+    while(is_or_no_repeat(count,b)) {
+         b=creat_a_one_digit_random();
      }
         count=count+b;
     }
     localStorage.setItem("count",count);
+    return count
+}
+
+is_or_no_have_some_number=function(count,num){
+    return _.some(count,function(list){return list==num})
+}
+
+creat_a_one_digit_random=function(){
+    var b=(Math.floor(Math.random()*9+0)).toString();
+    return b;
+}
+
+number_empty=function(){
+    localStorage.number_for_times="0"
+}
+
+page_initialization=function(){
     document.getElementById("button").disabled=false;
     document.getElementById("input").value="" ;
     document.getElementById("label").innerHTML="";
-    localStorage.number_for_times="0"
-    return count
 }
+
 is_or_no_repeat=function(count){
     var i,j;
     for(i=0;i<3;i++){
@@ -25,4 +41,5 @@ is_or_no_repeat=function(count){
         }
     }
     return "no";
+
 }
