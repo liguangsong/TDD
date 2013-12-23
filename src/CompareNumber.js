@@ -13,17 +13,31 @@ function get_input_value() {
 function number_analysis(guess_number, random_number) {
     var i, j, number_of_A = 0, number_of_B = 0;
     for (i = 0; i < 4; i++) {
-        for (j = 0; j < 4; j++) {
-            if (guess_number[i] == random_number[j] && i == j) {
-                number_of_A = number_of_A + 1
-            }
-            if (guess_number[i] == random_number[j] && i != j) {
-                number_of_B = number_of_B + 1;
-            }
-        }
+        number_of_A = compare_number_get_A_number(guess_number, random_number, i, number_of_A);
+        number_of_B = compare_number_get_B_number(guess_number, random_number, i, number_of_B);
     }
     number_for_times_add();
     return number_of_A + "A" + number_of_B + "B";
+}
+
+function compare_number_get_A_number(guess_number, random_number, i, number_of_A) {
+    var j,number_of_a=number_of_A;
+    for (j = 0; j < 4; j++) {
+        if (guess_number[i] == random_number[j] && i == j) {
+            number_of_a = number_of_a + 1
+        }
+    }
+    return number_of_a;
+}
+
+function compare_number_get_B_number(guess_number, random_number, i, number_of_B) {
+    var j ,number_of_b=number_of_B
+    for (j = 0; j < 4; j++) {
+        if (guess_number[i] == random_number[j] && i != j) {
+            number_of_b = number_of_b + 1
+        }
+    }
+    return number_of_b;
 }
 
 function number_for_times_add() {
