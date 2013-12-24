@@ -40,7 +40,7 @@ function is_or_no_repeat(random_number) {
 }
 
 function page_initialization() {
-    document.getElementById("button").disabled = false;
+    document.getElementById("guess_button").disabled = false;
     document.getElementById("input").value = "";
     document.getElementById("label").innerHTML = "";
 }

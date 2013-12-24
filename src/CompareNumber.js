@@ -3,7 +3,7 @@ function label_export(message) {
 }
 
 function button_disabled(abeled) {
-    document.getElementById("button").disabled = abeled;
+    document.getElementById("guess_button").disabled = abeled;
 }
 
 function get_input_value() {

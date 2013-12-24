@@ -3,7 +3,7 @@ describe("guess the results within six", function () {
     beforeEach(function () {
         localStorage.random_number = "1234"
         localStorage.number_for_times = "0";
-        document.getElementById("button").disabled = false;
+        document.getElementById("guess_button").disabled = false;
     });
 
     afterEach(function () {

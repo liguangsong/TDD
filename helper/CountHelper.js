@@ -55,5 +55,5 @@ function clear() {
     localStorage.number_for_times = "0";
     document.getElementById("input").value = "";
     document.getElementById("label").innerHTML = "";
-    document.getElementById("button").disabled = true;
+    document.getElementById("guess_button").disabled = true;
 }
