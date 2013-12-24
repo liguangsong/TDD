@@ -10,34 +10,63 @@ function get_input_value() {
     return   document.getElementById("input").value
 }
 
+function get_number_of_A(){
+    return JSON.parse(localStorage.number_of_A);
+}
+
+function get_number_of_B(){
+    return JSON.parse(localStorage.number_of_B);
+}
+
+function save_number_of_A(number){
+     localStorage.setItem("number_of_A",number)
+}
+
+function save_number_of_B(number){
+    localStorage.setItem("number_of_B",number)
+}
+
 function number_analysis(guess_number, random_number) {
-    var i, j, number_of_A = 0, number_of_B = 0;
-    for (i = 0; i < 4; i++) {
-        number_of_A = compare_number_get_A_number(guess_number, random_number, i, number_of_A);
-        number_of_B = compare_number_get_B_number(guess_number, random_number, i, number_of_B);
-    }
+    var i = "0"
+    _.each(guess_number, function (list) {
+        compare_number(i, guess_number, random_number);
+        i=parseInt(i)
+        i = (i+1).toString();
+    })
     number_for_times_add();
+   return get_sorting();
+}
+
+function get_sorting(){
+    var number_of_A=get_number_of_A();
+    var number_of_B=get_number_of_B();
     return number_of_A + "A" + number_of_B + "B";
 }
 
-function compare_number_get_A_number(guess_number, random_number, i, number_of_A) {
-    var j,number_of_a=number_of_A;
-    for (j = 0; j < 4; j++) {
-        if (guess_number[i] == random_number[j] && i == j) {
-            number_of_a = number_of_a + 1
-        }
-    }
-    return number_of_a;
+function compare_number(i, guess_number, random_number) {
+    var j ="0"
+    _.each(random_number, function (list) {
+        add_number_of_A(i, j, guess_number, random_number)
+        j=parseInt(j)
+        j = (j+1).toString();
+    })
 }
 
-function compare_number_get_B_number(guess_number, random_number, i, number_of_B) {
-    var j ,number_of_b=number_of_B
-    for (j = 0; j < 4; j++) {
-        if (guess_number[i] == random_number[j] && i != j) {
-            number_of_b = number_of_b + 1
-        }
+function add_number_of_A(i, j, guess_number, random_number) {
+    if (guess_number[i] == random_number[j] && i == j) {
+        var number_of_A=get_number_of_A()
+        number_of_A = (number_of_A + 1).toString();
+        save_number_of_A(number_of_A)
     }
-    return number_of_b;
+    return  add_number_of_B(i, j, guess_number, random_number)
+}
+
+function add_number_of_B(i, j, guess_number, random_number){
+    if(guess_number[i] == random_number[j] && i != j){
+        var number_of_B=get_number_of_B()
+        number_of_B = (number_of_B + 1).toString();
+        save_number_of_B(number_of_B)
+    }
 }
 
 function number_for_times_add() {
@@ -88,5 +117,6 @@ function guess_failure(sorting, number_for_times, random_number) {
 function guess_continue(sorting, number_for_times) {
     if (sorting != "4A0B" && number_for_times <= 6) {
         label_export(sorting);
+        number_of_A_and_B();
     }
 }

@@ -53,6 +53,8 @@ function get_most_number(event_list) {
 function clear() {
     localStorage.random_number = ""
     localStorage.number_for_times = "0";
+    localStorage.setItem("number_of_B",JSON.stringify(0));
+    localStorage.setItem("number_of_A",JSON.stringify(0))
     document.getElementById("input").value = "";
     document.getElementById("label").innerHTML = "";
     document.getElementById("guess_button").disabled = true;

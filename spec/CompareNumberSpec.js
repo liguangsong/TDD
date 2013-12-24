@@ -49,7 +49,6 @@ describe(" compare guess number", function () {
         var guess_number = "7895"
         var sort = number_analysis(guess_number, random_number)
         expect(sort).toBe("0A0B")
-
     });
 
 });

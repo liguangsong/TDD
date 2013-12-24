@@ -26,6 +26,10 @@ function is_or_no_have_some_number(random_number, one_digit_random) {
 function number_empty() {
     localStorage.number_for_times = "0"
 }
+function number_of_A_and_B(){
+    localStorage.number_of_A="0"
+    localStorage.number_of_B="0"
+}
 
 function is_or_no_repeat(random_number) {
     var i, j;
@@ -48,4 +52,6 @@ function page_initialization() {
 function start_game() {
     create_random_number();
     page_initialization();
+    number_empty();
+    number_of_A_and_B()
 }
